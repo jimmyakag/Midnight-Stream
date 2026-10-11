@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+
+    h1,
+    p,
+    h2 {
+        font-family: sans-serif;
+        color: white;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        top: 0;
+    }
+
+}
+
+@layer components {
+
+    .navbar {
+        background-image: linear-gradient(to bottom, #5781ff 5%, #4271ff 20%, #1C398E 80%);
+    }
+
+    .MSBackground {
+        background-image: url(./assets/bg.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .MovieCard {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content 5px max-content 10px 1fr;
+
+        width: 140px;
+        height: 352px;
+    }
+
+    .MovieCard h1 {
+        width: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        /* Limits text to max 2 lines before adding "..." */
+        overflow: hidden;
+        /* Breaks a single word across lines letter-by-letter if it runs out of space */
+        word-break: break-all;
+
+        /* Prevents text from overflowing the grid cell boundaries */
+        /* overflow-wrap: anywhere; */
+    }
+
+    @media (width >=48rem
+
+        /* 768px */
+    ) {
+        .MovieCard {
+            width: 160px;
+            height: 400px;
+        }
+    }
+
+    @media (width >=64rem
+
+        /* 1024px */
+    ) {
+        .MovieCard {
+            width: 224px;
+            height: 440px;
+        }
+    }
+
+    @media (width > 1280px) {
+        .MovieCard {
+            min-width: 280px;
+            max-width: 360px;
+            min-height: 600px;
+            max-height: 700px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media (width < 48rem) {
+        .MovieCard h1 {
+            -webkit-line-clamp: 5;
+
+        }
+    }
+
+    @media (width < 64rem) {
+        .MovieCard h1 {
+            -webkit-line-clamp: 4;
+
+        }
+
+    }
+
+    .Home {
+        width: 100%;
+        min-height: 100vh;
+    }
+}
